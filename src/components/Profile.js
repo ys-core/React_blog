@@ -1,9 +1,9 @@
 
 import React from 'react'
 
-import '../css/Profile.css'
+import '../css/profile.css'
 
-import logo from '../logo.svg'
+import logo from '../svg/logo.svg'
 
 function FormattedDate(props) {
   return <h2>{props.date.toLocaleDateString()}-{props.date.toLocaleTimeString()}.</h2>;

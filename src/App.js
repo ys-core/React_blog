@@ -5,7 +5,7 @@ import Body from  './components/Body'
 
 import './css/App.css';
 
-function App() {
+function App({match}) {
   return (
     <div className="App">
       <Body />
