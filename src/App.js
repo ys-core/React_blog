@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Profile from './components/Profile'
-import Body from  './components/Body'
+import Profile from './components/profile'
+import Body from  './components/body'
 
 import './css/App.css';
 
-function App({match}) {
+function App() {
   return (
     <div className="App">
-      <Body />
+       <Body />
        <Profile />
        {/* <Profile /> */}
     </div>

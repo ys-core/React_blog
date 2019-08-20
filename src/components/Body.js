@@ -2,16 +2,14 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import $ from 'jquery'
 
+
 import '../css/body.css'
-import { transform } from '@babel/core';
 
 
 class Body extends Component{
     constructor(props){
         super(props)
-        this.state={
-
-        }
+       
     }
     componentDidMount(){
         this.generateRandomColorValue()
@@ -38,15 +36,16 @@ class Body extends Component{
     render(){
         return(
            <div className="body_container">
+               
                <div className="header_container" >
                     <div className="header">
                         <div className="category_bar">
                           <ul>
                             <li className="default_homepage"><Link to="/" style={{textDecoration:'none'}}>HOMEPAGE</Link></li>
-                            <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseEnter={()=>this.commonHandleHover()}><Link to="/center">CENTER</Link></li>
-                            <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/blog">BLOG</Link></li>
-                            <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/article">ARTICLE</Link></li>
-                            <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/more">MORE..</Link></li>
+                            <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseEnter={()=>this.commonHandleHover()}><Link to="/test" style={{textDecoration:'none'}}>CENTER</Link></li>
+                            <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/blog" style={{textDecoration:'none'}}>BLOG</Link></li>
+                            <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/article" style={{textDecoration:'none'}}>ARTICLE</Link></li>
+                            <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/administrator" style={{textDecoration:'none'}}>MORE..</Link></li>
                          </ul>
                         </div>
                     </div>

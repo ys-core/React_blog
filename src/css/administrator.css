@@ -11,21 +11,42 @@ h1{
     padding-left: 6vw;
     /* color: coral; */
 }
+
+.return_btn{
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin-right: 5vw;
+    margin-top: 7vh;
+    font-size: 12px;
+}
+span:hover{
+    cursor: pointer;
+    font-weight: bolder;
+}
 .login_panel{
     width: 80%;
     height: 80vh;
     /* background: red; */
     margin: 0 auto;
     margin-top: 4vh;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     background-image: url('../image/admin.png');
     background-attachment: fixed;
     background-size: 110% 130%;
 }
-
+.signin{
+    /* background: yellow; */
+    height:60%;
+    width: 40%;
+    float: right;
+    padding-left: 3%;
+    padding-top: 20%;
+    padding-right: 4%;
+    margin-right: 15%;
+}
+.forget_password{
+    font-size: 10px;
+}
 .circle_bombing{
     width: 400px;
     height: 400px;
@@ -37,6 +58,13 @@ h1{
 .circle_bombing > li {
     list-style-type: none;
     position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: 300;
     width: 400px;
     height: 400px;
     background: rgba(14, 235, 25, 0.945);
@@ -46,21 +74,22 @@ h1{
 
 
 
+
 @keyframes admin_anim{
 	0%{opacity: 0;transform: scale(0);}
     45%{opacity: 1; transform: scale(0.05);}
     75%{opacity: 0.8; transform: scale(0.5);}
-	100%{opacity: 0.1;transform: scale(2);}
+	100%{opacity: 0.1;transform: scale(2);transform:rotate(320deg);}
 }
 
 .login_panel > .circle_bombing > li:nth-child(1){
-	animation: admin_anim 8s linear infinite 0s;
+	animation: admin_anim 2s linear infinite 0s;
 }
 .login_panel > .circle_bombing > li:nth-child(2){
-	animation: admin_anim 4s linear infinite 0.6s;
+	animation: admin_anim 2s linear infinite 0.6s;
 }
 .login_panel > .circle_bombing > li:nth-child(3){
-	animation: admin_anim 3s linear infinite 1.1s;
+	animation: admin_anim 2s linear infinite 1.1s;
 }
 .login_panel > .circle_bombing > li:nth-child(4){
 	animation: admin_anim 2s linear infinite 1.6s;

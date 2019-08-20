@@ -104,7 +104,9 @@
 .content_container > .sort_block_container > .sort_block > li:hover{
     cursor: pointer;
 }
-
+.content_container > .sort_block_container > .sort_block > li:first-child{
+    gext-decoration-line: tomato;
+}
 
 
 

@@ -6,4 +6,4 @@ import React from 'react'
 
 // export default notfound
 
-export default () => <h2>Not found...</h2>
+export default () => <h2> Page Not found..., 404 errors</h2>
