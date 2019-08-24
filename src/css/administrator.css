@@ -6,8 +6,8 @@
 }
 
 h1{
-    font-weight: 360;
-    margin-top: 4vh;
+    font-weight: 300;
+    margin-top: 6vh;
     padding-left: 6vw;
     /* color: coral; */
 }
@@ -20,9 +20,10 @@ h1{
     margin-top: 7vh;
     font-size: 12px;
 }
-span:hover{
+.return_btn:hover, .forget_password:hover{
     cursor: pointer;
     font-weight: bolder;
+    color: black;
 }
 .login_panel{
     width: 80%;
@@ -35,7 +36,7 @@ span:hover{
     background-size: 110% 130%;
 }
 .signin{
-    /* background: yellow; */
+    /* background: blue; */
     height:60%;
     width: 40%;
     float: right;

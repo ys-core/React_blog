@@ -10,18 +10,25 @@ import Administrator from './components/administrator'
 import Notfound from './components/notfound'
 import Test from './components/Test'
 
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+
 import * as serviceWorker from './serviceWorker';
 
+
 const routings = (
-    <Router  basename="/blog">
-        <Switch>
-            <Route exact path="/" component={App}></Route>
-            <Route exact path="/more" component={Profile}></Route>
-            <Route exact path="/administrator" component={Administrator}></Route>
-            <Route eaact path="/test" component={Test}></Route>
-            <Route component={Notfound}></Route>
-        </Switch>
-    </Router>
+
+        <Router  basename="/blog">
+            <Switch>
+                <Route exact path="/" component={App}></Route>
+                <Route exact path="/more" component={Profile}></Route>
+                <Route exact path="/administrator" component={Administrator}></Route>
+                <Route eaact path="/test" component={Test}></Route>
+                <Route component={Notfound}></Route>
+            </Switch>
+        </Router>
+
 )
 
 ReactDOM.render( routings, document.getElementById('root'));

@@ -7,20 +7,15 @@
 
 .profile_container{
     width: 28%;
-    /* background: red; */
-    /* display: flex; */
-    /* flex-direction: column; */
     height: 100vh;
-    /* align-items: center; */
     font-size: calc(2px + 1vh);
     position: fixed;
-
 }
 
 .profile{
     width: 96%;
     height: 100%;
-    background: rgba(87, 24, 24, 0.4);
+    /* background: rgba(87, 24, 24, 0.4); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,6 +27,53 @@
     animation: logo-rotate-spin 20s infinite;
     min-height: 28vh;
 }
+
+.detailed_info{
+    margin-top: 10vh;
+    width: 80%;
+    height: 55vh;
+    /* background: rgb(230, 213, 213); */
+    font-size: 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.detailed_info strong{
+    font-weight: 700;
+    font-size: calc(7px + 1vmin);
+    line-height: calc(16px + 2vmin);
+    color: black;
+}
+.detailed_info p{
+    text-indent: 2rem;
+    font-size: calc(5px + 1vmin); 
+    line-height: calc(10px + 2vmin);
+}
+.detailed_info ul li{
+    list-style-type: none;
+    font-size: calc(5px + 1vmin);
+    line-height: calc(12px + 2vmin);
+    margin-left: 1.5rem;
+    font-weight: bolder;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.detailed_info ul li:hover{
+    color:limegreen;
+}
+.detailed_info span{
+    /* font-size: calc(4px + 1vmin); */
+    line-height: calc(2px + 2vmin);
+}
+.detailed_info > .funny_phrase:hover{
+    cursor: pointer;
+    font-weight: bolder;
+    color: black;
+}
+.built_tag{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: black;
+}
+
 
 @keyframes logo-rotate-spin{
     from{

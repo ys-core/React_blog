@@ -6,11 +6,9 @@ import Input from '@material-ui/core/Input'
 import Button from '@material-ui/core/Button'
 
 import '../css/administrator.css'
-class Administrator extends Component {
-    constructor(props){
-        super(props);
 
-    }
+class Administrator extends Component {
+    
     componentDidMount(){
         this.generateRandomColorValue()
         var timer = setInterval(()=>{
