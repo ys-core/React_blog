@@ -29,7 +29,11 @@ class ContentTemplate extends Component{
 class Body extends Component{
     constructor(props){
         super(props)
-       
+        let obtain_last_page = window.sessionStorage.getItem("last_view_page") // obtain last view page from seesion storage when return back to hoempage
+        this.state = { 
+            article_num: 200,        //  pagination
+            currenetPage: JSON.parse(obtain_last_page) || 1
+        }
     }
     componentDidMount(){
         this.generateRandomColorValue()
@@ -39,6 +43,8 @@ class Body extends Component{
     }
     componentWillUnmount(){
         clearInterval(this.timer)
+        let session_storage = window.sessionStorage
+        session_storage.setItem("last_view_page",this.state.currenetPage);
     }
     generateRandomColorValue(){
         for(let i = 0; i < 12; i++ ){
@@ -46,6 +52,12 @@ class Body extends Component{
             let value = 'rgba('+r+','+g+','+b+','+a+')';
             $('.sort_block > li:eq('+i+')').css("background",value)
         }
+    }
+    pageChange(page){
+        // console.log(page)
+        this.setState({
+            currenetPage: page,
+        })
     }
     commonHandleHover(){
         $('.default_homepage').css({"color":"black","border-bottom":"0px solid tomato"})
@@ -106,7 +118,7 @@ class Body extends Component{
                     <ContentTemplate content={co} />
                     
                </div>
-               <Pagination defaultCurrent={1} total={50}/>
+               <Pagination size="small" current={this.state.currenetPage} onChange={this.pageChange.bind(this)} total={this.state.article_num} showQuickJumper />
 
            </div>
         )
