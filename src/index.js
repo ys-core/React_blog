@@ -7,6 +7,7 @@ import './css/index.css';
 import App from './App';
 import Profile from './components/profile'
 import Administrator from './components/administrator'
+import EditArticle from './components/editArticle'
 import Notfound from './components/notfound'
 import Test from './components/Test'
 
@@ -24,6 +25,7 @@ const routings = (
                 <Route exact path="/" component={App}></Route>
                 <Route exact path="/more" component={Profile}></Route>
                 <Route exact path="/administrator" component={Administrator}></Route>
+                <Route exact path="/article" component={EditArticle}></Route>
                 <Route eaact path="/test" component={Test}></Route>
                 <Route component={Notfound}></Route>
             </Switch>

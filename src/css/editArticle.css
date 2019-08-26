@@ -1,0 +1,9 @@
+
+.article_sider, .article_content{
+    height: 100vh;
+}
+
+.editor_warpper{
+    width: 80%;
+    margin: 0 auto;
+}
