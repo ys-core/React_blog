@@ -3,7 +3,7 @@
     height: 100vh;
 }
 
-.editor_warpper{
-    width: 80%;
-    margin: 0 auto;
+.article_content{
+    /* background: red; */
+    width: 100%;
 }

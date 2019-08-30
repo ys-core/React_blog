@@ -10,6 +10,7 @@ import Administrator from './components/administrator'
 import EditArticle from './components/editArticle'
 import Notfound from './components/notfound'
 import Test from './components/Test'
+import Demo from './components/demo'
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
@@ -26,7 +27,7 @@ const routings = (
                 <Route exact path="/more" component={Profile}></Route>
                 <Route exact path="/administrator" component={Administrator}></Route>
                 <Route exact path="/article" component={EditArticle}></Route>
-                <Route eaact path="/test" component={Test}></Route>
+                <Route eaact path="/test" component={Demo}></Route>
                 <Route component={Notfound}></Route>
             </Switch>
         </Router>
