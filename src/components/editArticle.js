@@ -12,6 +12,7 @@ const { SubMenu } = Menu
 
 class EditArticle extends Component{
     state = {
+        articleTitle: '',
         articleType: '',
         editorState: BraftEditor.createEditorState('<p>Hello <b>welcome here !</b></p>'), // 设置编辑器初始内容
         outputHTML: '<p></p>'
@@ -30,8 +31,13 @@ class EditArticle extends Component{
             outputHTML: editorState.toHTML()
         })
     }
+    articleTitle = (e) => {
+        this.setState({
+            articleTitle: e.target.value
+        })
+    }
     articleType = (e) => {
-        console.log('radio checked', e.target.value)
+        // console.log('radio checked', e.target.value)
         this.setState({
             articleType: e.target.value
         })
@@ -41,7 +47,14 @@ class EditArticle extends Component{
             editorState: BraftEditor.createEditorState('<p>主人，<b>在此处开始编辑你的内容吧!</b><p>')
         })
     }
-    handleSubmit = e => {               // last click the button to submit the article to the server database.
+    handleSubmit = e => {               // click last click the button to submit the article to the server database.
+        if((!this.state.articleTitle) || (!this.state.articleType)){
+            console.log("非法提交")
+        }
+        else{
+            console.log("submit the content to the databases")
+        }
+      
         e.preventDefault()
     }
 
@@ -97,7 +110,7 @@ class EditArticle extends Component{
                 </Sider>
                 <Content className="article_content">
                      <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-                        <Form.Item label="title"><Input placeholder="input the article title ..." style={{width:400}}/></Form.Item>
+                        <Form.Item label="title"><Input placeholder="input the article title ..." onChange={this.articleTitle} value={this.state.articleTitle} style={{width:400}}/></Form.Item>
                         <Form.Item label="category"> <Input placeholder="select the article type ..." value={this.state.articleType} style={{width:200}}/>
                         <Radio.Group buttonStyle="outline" onChange={this.articleType} value={this.state.articleType}>
                             <Radio value="CSS">CSS</Radio>
@@ -122,7 +135,7 @@ class EditArticle extends Component{
                         </Form.Item>
                         <Form.Item {...tailFormItemLayout}><Button type="primary" htmlType="submit"> submit this article </Button> </Form.Item>
                         <h5>输出内容</h5>
-                        <div className="output-content">{outputHTML}</div>
+                        <div className="output-content">{this.state.articleTitle + this.state.articleType + outputHTML}</div>
                     </Form>
                 </Content>
             </Layout>
