@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'    //react-router-dom
+import { hashHistory, BrowserRouter as Router, Switch, Route } from 'react-router-dom'    //react-router-dom
 
 
 import './css/index.css';
@@ -11,7 +11,7 @@ import EditArticle from './components/editArticle'
 import Notfound from './components/notfound'
 // import Test from './components/Test'
 import Demo from './components/demo'
-
+import CommitSuccess from './components/commitSuccess'
 
 import * as serviceWorker from './serviceWorker';
 
@@ -24,7 +24,7 @@ const routings = (
                 <Route exact path="/more" component={Profile}></Route>
                 <Route exact path="/administrator" component={Administrator}></Route>
                 <Route exact path="/article" component={EditArticle}></Route>
-                <Route eaact path="/test" component={Demo}></Route>
+                <Route eaact path="/test" component={CommitSuccess}></Route>
                 <Route component={Notfound}></Route>
             </Switch>
         </Router>

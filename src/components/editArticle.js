@@ -1,7 +1,9 @@
 
 import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
 import { Layout, Input, Menu, Icon, Form, Radio, Button, } from 'antd'
 
+import CommitSuccess from './commitSuccess'
 import BraftEditor from 'braft-editor'   // editor for react
 import 'braft-editor/dist/index.css'
 import '../css/editArticle.css'
@@ -11,6 +13,9 @@ const { SubMenu } = Menu
 
 
 class EditArticle extends Component{
+    constructor(props){
+        super(props)
+    }
     state = {
         articleTitle: '',
         articleType: '',
@@ -53,6 +58,7 @@ class EditArticle extends Component{
         }
         else{
             console.log("submit the content to the databases")
+            this.props.history.psh("commitSuccess")
         }
       
         e.preventDefault()
@@ -122,6 +128,7 @@ class EditArticle extends Component{
                             <Radio value="Nodejs">Nodejs</Radio>
                             <Radio value="Flutter">Flutter</Radio>
                             <Radio value="Database">Database</Radio>
+                            <Radio value="Python">Python</Radio>
                             <Radio value="PhP">PhP</Radio>
                             <Radio value="Java">Java</Radio>
                         </Radio.Group>
@@ -138,6 +145,7 @@ class EditArticle extends Component{
                         <div className="output-content">{this.state.articleTitle + this.state.articleType + outputHTML}</div>
                     </Form>
                 </Content>
+                
             </Layout>
        )
     }

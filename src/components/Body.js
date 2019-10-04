@@ -59,11 +59,13 @@ class Body extends Component{
         // const height = scrollHeight - scrollTop - clientHeight;
         // 判断距离页面底部的高度
         // console.log(scrollTop,clientHeight,scrollHeight,height)
-        if(scrollTop < 20){
+        if(scrollTop < 20 && this.refs.home_header){
             this.refs.home_header.style.display = 'block'
         }
         else{
-            this.refs.home_header.style.display = 'none'
+            if(this.refs.home_header){
+                this.refs.home_header.style.display = 'none'
+            }
         }
     }
     generateRandomColorValue(){
@@ -103,6 +105,7 @@ class Body extends Component{
                             <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseEnter={()=>this.commonHandleHover()}><Link to="/test" style={{textDecoration:'none'}}>CENTER</Link></li>
                             <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/blog" style={{textDecoration:'none'}}>BLOG</Link></li>
                             <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/article" style={{textDecoration:'none'}}>ARTICLE</Link></li>
+                            <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/notes" style={{textDecoration:'none'}}>NOTES</Link></li>
                             <li className="common_router" onMouseOut={()=>{this.commonHandleLeave()}} onMouseOver={()=>this.commonHandleHover()}><Link to="/administrator" style={{textDecoration:'none'}}>MORE..</Link></li>
                          </ul>
                         </div>
