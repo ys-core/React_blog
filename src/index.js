@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'    //router
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'    //react-router-dom
 
 
 import './css/index.css';
@@ -9,11 +9,8 @@ import Profile from './components/profile'
 import Administrator from './components/administrator'
 import EditArticle from './components/editArticle'
 import Notfound from './components/notfound'
-import Test from './components/Test'
+// import Test from './components/Test'
 import Demo from './components/demo'
-
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
 
 
 import * as serviceWorker from './serviceWorker';

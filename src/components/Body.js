@@ -5,6 +5,7 @@ import { Pagination } from 'antd'
 
 import '../css/body.css'
 
+import store from '../redux/redux.js'
 
 
 import { Typography, Col, Row} from 'antd';
@@ -37,15 +38,33 @@ class Body extends Component{
         }
     }
     componentDidMount(){
+        console.log(store.getState())
+        window.addEventListener('scroll', this.handleScrollEvent.bind(this))
         this.generateRandomColorValue()
-        var timer = setInterval(()=>{
-           this.generateRandomColorValue()
-        },2000);
+        
     }
     componentWillUnmount(){
-        clearInterval(this.timer)
+        window.removeEventListener('scroll',this.handleScrollEvent.bind(this))
         let session_storage = window.sessionStorage   // just for that still be the previous homepage status when return back to homepage not the Page 1, so save the page index in SessionStorage for later useage before leaving homepage.
         session_storage.setItem("last_view_page",this.state.currenetPage);
+    }
+    handleScrollEvent(event){
+        // 滚动的高度
+        const scrollTop = (event.srcElement ? event.srcElement.documentElement.scrollTop : false) || window.pageYOffset || (event.srcElement ? event.srcElement.body.scrollTop : 0);
+        // 视窗高度
+        // const clientHeight = (event.srcElement && event.srcElement.documentElement.clientHeight) || document.body.clientHeight;
+        // 页面高度
+        // const scrollHeight = (event.srcElement && event.srcElement.documentElement.scrollHeight) || document.body.scrollHeight;
+        // 距离页面底部的高度
+        // const height = scrollHeight - scrollTop - clientHeight;
+        // 判断距离页面底部的高度
+        // console.log(scrollTop,clientHeight,scrollHeight,height)
+        if(scrollTop < 20){
+            this.refs.home_header.style.display = 'block'
+        }
+        else{
+            this.refs.home_header.style.display = 'none'
+        }
     }
     generateRandomColorValue(){
         for(let i = 0; i < 12; i++ ){
@@ -76,7 +95,7 @@ class Body extends Component{
         return(
            <div className="body_container">
                
-               <div className="header_container animated slideInDown" >
+               <div className="header_container animated slideInDown" ref="home_header" >
                     <div className="header">
                         <div className="category_bar">
                           <ul>

@@ -11,9 +11,9 @@ class Administrator extends Component {
     
     componentDidMount(){
         this.generateRandomColorValue()
-        var timer = setInterval(()=>{
-           this.generateRandomColorValue()
-        },2000);
+        // var timer = setInterval(()=>{
+        //    this.generateRandomColorValue()
+        // },2000);
     }
     generateRandomColorValue(){
         for(let i = 0; i < 4; i++ ){
