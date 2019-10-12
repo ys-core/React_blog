@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { hashHistory, BrowserRouter as Router, Switch, Route } from 'react-router-dom'    //react-router-dom
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'    //react-router-dom
 
 
 import './css/index.css';
@@ -8,6 +8,7 @@ import App from './App';
 import Profile from './components/profile'
 import Administrator from './components/administrator'
 import EditArticle from './components/editArticle'
+import ArticleContent from './components/articleContent'
 import Notfound from './components/notfound'
 // import Test from './components/Test'
 import Demo from './components/demo'
@@ -24,6 +25,7 @@ const routings = (
                 <Route exact path="/more" component={Profile}></Route>
                 <Route exact path="/administrator" component={Administrator}></Route>
                 <Route exact path="/article" component={EditArticle}></Route>
+                <Route exact path="/article/:index" component={ArticleContent}></Route>
                 <Route eaact path="/test" component={CommitSuccess}></Route>
                 <Route component={Notfound}></Route>
             </Switch>
