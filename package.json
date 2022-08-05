@@ -9,7 +9,7 @@
     "braft-editor": "^2.3.7",
     "element-theme-default": "^1.4.13",
     "jquery": "^3.4.1",
-    "mongoose": "^5.7.4",
+    "mongoose": "^5.7.5",
     "nodemailer": "^6.3.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
